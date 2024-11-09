@@ -1,0 +1,68 @@
+//Integer8. Дано двозначне число. Вивести число, отримане при перестановці цифр вихідного числа.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    // Введення даних
+    int number, firstDigit, secondDigit;
+    cout << "Введіть двозначне число: ";
+    cin >> number;
+
+    // Розділення числа на цифри
+    firstDigit = number / 10;
+    secondDigit = number % 10;
+
+    // Перестановка цифр
+    int newNumber = secondDigit * 10 + firstDigit;
+    
+    // Виведення результату
+    cout << "Число з переставленими цифрами: " << newNumber << endl;
+
+//Integer3. Дан розмір файлу в байтах. Використовуючи операцію цілочисельного ділення, знайти кількість повних кілобайт, які займає даний файл (1 кілобайт = 1024 байти).
+    // Введення даних
+    int fileSizeInBytes;
+    cout << "Введіть розмір файлу в байтах: ";
+    cin >> fileSizeInBytes;
+
+    // Обчислення кількості повних кілобайтів
+    int fullKilobytes = fileSizeInBytes / 1024;
+
+    // Виведення даних
+    cout << "Кількість повних кілобайтів: " << fullKilobytes << endl;
+
+//Integer29. Дано цілі додатні числа A, B, C. На прямокутнику розміру A × B розміщено максимально можлива кількість квадратів зі стороною C (без накладання). Знайти кількість квадратів, розміщених на прямокутнику, а також площу незайнятої частини прямокутника.
+    int A, B, C;
+    // Введення даних
+    cout << "Введіть довжину прямокутника (A): ";
+    cin >> A;
+    cout << "Введіть ширину прямокутника (B): ";
+    cin >> B;
+    cout << "Введіть сторону квадрата (C): ";
+    cin >> C;
+
+    // Кількість квадратів по горизонталі та вертикалі
+    int squaresHorizontally = A / C;
+    int squaresVertically = B / C;
+
+    // Загальна кількість квадратів
+    int totalSquares = squaresHorizontally * squaresVertically;
+
+    // Площі
+    int squareArea = C * C;
+    int rectangleArea = A * B;
+    int unusedArea = rectangleArea - totalSquares * squareArea;
+   
+    // Виведення даних
+    cout << "Кількість квадратів: " << totalSquares << endl;
+    cout << "Площа незайнятої частини: " << unusedArea << endl;
+
+    return 0;
+}
+
+
+
+
+
+
