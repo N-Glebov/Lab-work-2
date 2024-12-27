@@ -37,22 +37,18 @@ int main() {
     cin >> x;
 
     // Перевірка на коректність значень, які входять у логарифм, тангенс та корені
-    if (x <= 0) {
-    cout << "Помилка: логарифм та модуль x повинні бути визначені для x > 0." << endl;
+    if (x == 0) {
+    cout << "Помилка: підлогарифмічний вираз не може дорівнювати x > 0. " << endl;
     return 1;
     }
-    if (3 * x + 2 <= 0) {
-    cout << "Помилка: підкореневий вираз 3x + 2 повинен бути додатним." << endl;
-    return 1;
-    }
-    if (tan(x) == 0) {
-    cout << "Помилка: тангенс не може бути нулем, оскільки це викликає ділення на нуль." << endl;
+    if (x % (M_PI / 2) == 0) {
+    cout << "Помилка: не иснуе тангенса 90, 180, 270, 360 градусив а так дали" << endl;
     return 1;
     }
 
     // Обчислення виразу
-    double numerator = cbrt((pow(x, 3) / 4) - pow(sin(x), 2) * pow(x, 3) * 2) * log10(x) / log10(5);
-    double denominator = pow(2, x) * sqrt(3 * x + 2) * abs(tan(x));
+    double numerator = cbrt((pow(x, 3) / 4) - pow(sin(x), 2) * pow(x, 3) * 2) * log10(abs(x)) / log10(5);
+    double denominator = pow(2, x) * sqrt(abs(3 * x + 2.5 * abs(tan(x))));
     double y = numerator / denominator;
 
     // Виведення результату
