@@ -51,7 +51,7 @@ int main() {
     }
 
     // Обчислення виразу
-    double numerator = cbrt((pow(x, 3) / 4) - pow(sin(x), 2) * pow(x, 3) * 2 * log10(x) / log10(5));
+    double numerator = cbrt((pow(x, 3) / 4) - pow(sin(x), 2) * pow(x, 3) * 2) * log10(x) / log10(5);
     double denominator = pow(2, x) * sqrt(3 * x + 2) * abs(tan(x));
     double y = numerator / denominator;
 
